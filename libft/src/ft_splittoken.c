@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strplittoken.c                                  :+:      :+:    :+:   */
+/*   ft_splittoken.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: glafitte <glafitte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/04/27 17:15:07 by glafitte          #+#    #+#             */
-/*   Updated: 2015/04/27 17:33:17 by glafitte         ###   ########.fr       */
+/*   Created: 2015/05/03 14:35:21 by glafitte          #+#    #+#             */
+/*   Updated: 2015/05/08 10:36:13 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char		**ft_splittoken(char const *s, char const *tokens)
 	int		j;
 	int		w;
 
-	if (!(tab = (char **)malloc(sizeof(char *) * ft_count(s, tokens))))
+	if (!(tab = (char **)ft_memalloc(sizeof(char *) * ft_count(s, tokens))))
 		return (NULL);
 	w = 0;
 	i = 0;

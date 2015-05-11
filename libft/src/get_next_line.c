@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/10 14:35:51 by glafitte          #+#    #+#             */
-/*   Updated: 2015/04/01 15:04:09 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/05/08 11:59:49 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ int			ft_gnl(int const fd, char **line)
 	}
 	*buf = 0;
 	*line = ft_strdup(dst);
-	free(dst);
+	ft_memdel((void **)&dst);
 	return (c || ft_strlen(buf) || ft_strlen(*line));
 }

@@ -6,7 +6,7 @@
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/09/04 08:16:28 by glafitte          #+#    #+#             */
-/*   Updated: 2015/04/27 18:20:52 by glafitte         ###   ########.fr       */
+/*   Updated: 2015/05/11 10:25:02 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define CYAN			"\033[1;36m"
 # define BLUE			"\033[1;34m"
 # define YELLOW			"\033[1;33m"
+# define C_NONE         "\033[0m"
 
 typedef struct			s_gnlp
 {
@@ -34,7 +35,7 @@ typedef struct			s_gnlp
 }						t_gnlp;
 
 void					ft_putcolor(const char *str, const char *color, int i);
-void					ft_err_loc(char *file, int line, char *msg);
+int						ft_err_loc(char *file, int line, char *msg);
 int						ft_gnl(int const fd, char **line);
 void					ft_freetab(char ***tab);
 int						ft_fprintf(int fd, char const *format, ...);
@@ -42,7 +43,6 @@ int						ft_strlen_s(const char *str);
 void					ft_puterror(char *error);
 int						ft_abs(int a);
 void					ft_putstr(char const *s);
-void					ft_putchar(char c);
 int						ft_strcmp(char const *s1, char const *s2);
 int						ft_strlen(const char *str);
 void					ft_putnbr(int n);
@@ -105,5 +105,13 @@ char					**ft_splittoken(char const *s, char const *tokens);
 char					*ft_implode(char **tab, char const *to_put);
 int						ft_count_tab(char **tab);
 int						ft_print_tab(char **tab);
+char					*ft_strrep(char const *str, char *sub, char *rep,
+									int r);
+char					*ft_strrepf(char const *str, char *sub, char *rep,
+									int r);
+int						ft_option(int argc, char **argv, char const *opt,
+									int *start);
+int						ft_putchar(int c);
+char					**ft_tabdup(char **src);
 
 #endif

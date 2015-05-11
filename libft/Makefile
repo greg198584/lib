@@ -6,14 +6,14 @@
 #    By: glafitte <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/19 11:11:25 by glafitte          #+#    #+#              #
-#    Updated: 2015/04/27 18:08:02 by glafitte         ###   ########.fr        #
+#    Updated: 2015/05/11 10:25:35 by glafitte         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all, clean, fclean, re
 
 NAME = libft.a
-CFLAGS = -Wall -Wextra -Werror -g -I ../include/
+CFLAGS = -Wall -Wextra -Werror -g -I include/
 CC = gcc
 SRCS =	src/tab_fc.c \
 		src/ft_implode.c \
