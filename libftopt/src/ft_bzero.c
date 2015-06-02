@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/16 09:43:56 by glafitte          #+#    #+#             */
-/*   Updated: 2015/06/02 22:25:27 by glafitte         ###   ########.fr       */
+/*   Created: 2014/11/03 16:16:39 by glafitte          #+#    #+#             */
+/*   Updated: 2014/11/08 09:33:36 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftx.h"
+#include <string.h>
 
-int	ftx_err_loc(char *file, int line, char *msg)
+void	ft_bzero(void *s, size_t n)
 {
-	ftx_fprintf(2, "Erreur: %s\n", msg);
-	ftx_fprintf(2, "%s", file);
-	ftx_fprintf(2, " at line: ");
-	ftx_fprintf(2, "%d\n", line);
-	return (1);
+	unsigned char	*buffer;
+
+	buffer = s;
+	while (n--)
+		*buffer++ = 0;
 }

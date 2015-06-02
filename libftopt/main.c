@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: glafitte <glafitte@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/16 09:43:56 by glafitte          #+#    #+#             */
-/*   Updated: 2015/06/02 22:25:27 by glafitte         ###   ########.fr       */
+/*   Created: 2015/06/02 21:13:44 by glafitte          #+#    #+#             */
+/*   Updated: 2015/06/02 22:24:52 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftx.h"
+#include "libftopt.h"
 
-int	ftx_err_loc(char *file, int line, char *msg)
+int	main(int argc, char **argv)
 {
-	ftx_fprintf(2, "Erreur: %s\n", msg);
-	ftx_fprintf(2, "%s", file);
-	ftx_fprintf(2, " at line: ");
-	ftx_fprintf(2, "%d\n", line);
-	return (1);
+	if (argc < 2)
+		return (0);
+	return (0);
 }

@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_strcmpsh.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/16 09:43:56 by glafitte          #+#    #+#             */
-/*   Updated: 2015/06/02 22:25:27 by glafitte         ###   ########.fr       */
+/*   Created: 2015/04/28 11:01:04 by glafitte          #+#    #+#             */
+/*   Updated: 2015/06/02 22:52:46 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftx.h"
-
-int	ftx_err_loc(char *file, int line, char *msg)
+char	ft_strcmp(const char *s1, const char *s2, char equ)
 {
-	ftx_fprintf(2, "Erreur: %s\n", msg);
-	ftx_fprintf(2, "%s", file);
-	ftx_fprintf(2, " at line: ");
-	ftx_fprintf(2, "%d\n", line);
-	return (1);
+	int	i;
+
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	if (equ)
+		return (s1[i] == '=' && s2[i] == '\0');
+	return ((s1[i] == s2[i] || s1[i] == ' ' || s1[i] == '\t') && s2[i] == '\0');
 }

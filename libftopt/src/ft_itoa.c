@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/16 09:43:56 by glafitte          #+#    #+#             */
-/*   Updated: 2015/06/02 22:25:27 by glafitte         ###   ########.fr       */
+/*   Created: 2014/11/03 16:58:20 by glafitte          #+#    #+#             */
+/*   Updated: 2015/06/02 23:06:46 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftx.h"
+#include "libftopt.h"
 
-int	ftx_err_loc(char *file, int line, char *msg)
+char	*ft_itoa(int n)
 {
-	ftx_fprintf(2, "Erreur: %s\n", msg);
-	ftx_fprintf(2, "%s", file);
-	ftx_fprintf(2, " at line: ");
-	ftx_fprintf(2, "%d\n", line);
-	return (1);
+	char *p;
+
+	if (n == -2147483648)
+		return ("-2147483648");
+	if (!n)
+		return ("0");
+	p = ft_strnew(20) + 19;
+	if (n >= 0 && p)
+	{
+		*--p = '0' + (n % 10);
+		while ((n /= 10) != 0)
+			*--p = '0' + (n % 10);
+	}
+	else if (p)
+	{
+		*--p = '0' - (n % 10);
+		while ((n /= 10) != 0)
+			*--p = '0' - (n % 10);
+		*--p = '-';
+	}
+	return (p);
 }

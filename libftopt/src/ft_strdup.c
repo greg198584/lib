@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/16 09:43:56 by glafitte          #+#    #+#             */
-/*   Updated: 2015/06/02 22:25:27 by glafitte         ###   ########.fr       */
+/*   Created: 2015/04/28 17:36:27 by glafitte          #+#    #+#             */
+/*   Updated: 2015/06/02 21:43:28 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftx.h"
+#include <stdlib.h>
 
-int	ftx_err_loc(char *file, int line, char *msg)
+char	*ft_strdup(char *src)
 {
-	ftx_fprintf(2, "Erreur: %s\n", msg);
-	ftx_fprintf(2, "%s", file);
-	ftx_fprintf(2, " at line: ");
-	ftx_fprintf(2, "%d\n", line);
-	return (1);
+	int		i;
+	int		str_source_size;
+	char	*str;
+
+	i = 0;
+	str_source_size = 0;
+	while (src[str_source_size] != '\0')
+		str_source_size++;
+	if ((str = (char *)malloc(sizeof(src) * (str_source_size + 1))) == NULL)
+		return (NULL);
+	while (src[i] != '\0')
+	{
+		str[i] = src[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }
