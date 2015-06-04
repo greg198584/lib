@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmpsh.c                                      :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: glafitte <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/04/28 11:01:04 by glafitte          #+#    #+#             */
-/*   Updated: 2015/06/02 22:52:46 by glafitte         ###   ########.fr       */
+/*   Created: 2015/06/04 10:05:48 by glafitte          #+#    #+#             */
+/*   Updated: 2015/06/04 10:17:10 by glafitte         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	ft_strcmp(const char *s1, const char *s2, char equ)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i])
-		i++;
-	if (equ)
-		return (s1[i] == '=' && s2[i] == '\0');
-	return ((s1[i] == s2[i] || s1[i] == ' ' || s1[i] == '\t') && s2[i] == '\0');
+int	main(int argc, char **argv)
+{
+	if (argc < 2)
+		return (0);
+	return  (0);
 }
